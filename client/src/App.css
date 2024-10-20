@@ -1,0 +1,948 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f7ec;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+}
+
+.nav-buttons .btn {
+  background-color: white;
+  color: #4CAF50;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.nav-buttons .btn:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #e7f5d9;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #4CAF50;
+}
+
+.hero p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.actions {
+  margin-top: 30px;
+}
+
+.actions .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  margin: 0 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.actions .btn-primary:hover {
+  background-color: #45a049;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+  padding: 0 50px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.cta a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-links a, .social-media a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover, .social-media a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do Pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content form label {
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.popup-content form input, .popup-content form select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.popup-content form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content form button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo do botão de fechar o pop-up */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.resultados-pontos {
+  text-align: center;
+  padding: 30px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pontos-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ponto-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 70%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.ponto-item h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.ponto-item p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.ponto-item a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ponto-item a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do formulário de cadastro */
+.cadastro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f3f7ec;
+  border-radius: 10px;
+  width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-container h1 {
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+.cadastro-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cadastro-container form input,
+.cadastro-container form textarea,
+.cadastro-container form select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.cadastro-container form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.cadastro-container form label {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.cadastro-container form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.cadastro-container form button:hover {
+  background-color: #45a049;
+}
+
+/* Alinhamento dos checkboxes "Compra materiais" e "Vende materiais" */
+.compra-venda-materiais {
+  display: flex;
+  justify-content: space-between; /* Alinha os itens na mesma linha */
+  margin-bottom: 15px;
+}
+
+.compra-venda-materiais label {
+  margin-left: 5px;
+}
+
+/* Estilo para os checkboxes dos tipos de materiais */
+.materiais-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.materiais-checkbox-group div {
+  width: 48%; /* Cada checkbox ocupa aproximadamente metade da linha */
+  margin-bottom: 5px;
+}
+
+.materiais-checkbox-group input {
+  margin-right: 5px;
+}
+
+/* Alinhamento dos botões de rádio para tipo de serviço */
+.servico-recebimento {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.servico-recebimento label {
+  margin-left: 5px;
+}
+
+/* Estilo do link para login */
+.cadastro-container form p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.cadastro-container form p a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.cadastro-container form p a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do formulário de login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f3f7ec;
+  border-radius: 10px;
+  width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-container form input {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.login-container form .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.login-container form .btn-primary:hover {
+  background-color: #45a049;
+}
+
+.forgot-password {
+  text-align: right;
+  color: #666;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-container form p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-container form p a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.login-container form p a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Estilos para a página de perfil */
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f3f7ec;
+  border-radius: 10px;
+  
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-info {
+  text-align: center;
+}
+
+.perfil-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.perfil-details p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.perfil-info h2 {
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+/* Adiciona estilo para a barra de navegação com link para o perfil */
+.nav-buttons .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.nav-buttons .btn:hover {
+  background-color: #45a049;
+}
+
+/* Botão de ação no perfil */
+.perfil-details .btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.perfil-details .btn:hover {
+  background-color: #45a049;
+}
+
+input[disabled], textarea[disabled], select[disabled] {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Estilos gerais do pop-up */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Certifica-se de que o pop-up esteja à frente de outros elementos */
+}
+
+.popup-content {
+  background-color: #f3f7ec;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+  color: #4CAF50;
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content textarea {
+  resize: none;
+  height: 80px;
+}
+
+.popup-content .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.popup-content .btn-primary:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para o botão de fechar (X) */
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-content .close:hover {
+  color: #f00; /* Mudança de cor ao passar o mouse */
+}
+
+/* Estilo para a mensagem de erro */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* Estilos da página de gerenciamento do admin */
+.admin-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f3f7ec;
+  min-height: 100vh;
+}
+
+.admin-container h1 {
+  color: #f3f7ec;
+  margin-bottom: 30px;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.admin-actions .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 250px;
+  text-align: center;
+}
+
+.admin-actions .btn:hover {
+  background-color: #45a049;
+}
+
+/* Estilos dos pop-ups */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.popup-content button:hover {
+  background-color: #45a049;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-content ul li {
+  margin-bottom: 10px;
+}
+
+.popup-content ul li a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.popup-content ul li a:hover {
+  text-decoration: underline;
+}
+
+.popup-content button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.popup-content button.btn-danger {
+  background-color: #f44336;
+  margin-left: 10px;
+}
+
+.popup-content button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para o gerenciamento de pontos */
+.gerenciar-pontos-container {
+  padding: 20px;
+  background-color: #f3f7ec;
+  min-height: 100vh;
+}
+
+.gerenciar-pontos-container h1 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pontos-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.ponto-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ponto-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ponto-tags span {
+  background-color: #e0f7e8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.ponto-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.btn-edit:hover {
+  color: #4CAF50;
+}
+
+.btn-delete:hover {
+  color: #f44336;
+}
+
+/* Estilos para o pop-up de edição */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-bottom: 20px;
+}
+
+.popup-content label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content textarea {
+  resize: none;
+  height: 80px;
+}
+
+.popup-content .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.popup-content .btn-primary:hover {
+  background-color: #45a049;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-content .close:hover {
+  color: #f00;
+}
+
+/* Estilo para a mensagem de erro */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}

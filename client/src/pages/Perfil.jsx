@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Perfil = () => {
-    const location = useLocation();
-    const [usuario, setUsuario] = useState(location.state?.usuario || {});
+    const navigate = useNavigate();
+    const [usuario, setUsuario] = useState({});
     const [editMode, setEditMode] = useState(false); // Define se o perfil está em modo de edição
+
+    useEffect(() => {
+        // Recupera os dados do usuário do localStorage
+        const usuarioStored = JSON.parse(localStorage.getItem('usuario'));
+
+        if (!usuarioStored) {
+            // Se não houver usuário, redireciona para a página de login
+            navigate('/login');
+        } else {
+            setUsuario(usuarioStored);
+        }
+    }, [navigate]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -15,12 +27,18 @@ const Perfil = () => {
     const handleSave = async () => {
         try {
             await axios.put(`http://localhost:8000/usuario/${usuario.usuario_id}`, usuario);
+            localStorage.setItem('usuario', JSON.stringify(usuario)); // Salva os dados no localStorage apenas após a atualização bem-sucedida
             alert('Dados atualizados com sucesso!');
             setEditMode(false); // Sai do modo de edição após salvar
         } catch (err) {
             console.error('Erro ao atualizar os dados:', err);
             alert('Erro ao atualizar os dados. Tente novamente.');
         }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('usuario'); // Remove os dados do usuário do localStorage
+        navigate('/login'); // Redireciona para a página de login
     };
 
     if (!usuario) {
@@ -117,6 +135,8 @@ const Perfil = () => {
                     ) : (
                         <button className="btn" onClick={() => setEditMode(true)}>Editar Perfil</button>
                     )}
+
+                    <button className="btn" onClick={handleLogout}>Sair</button>
                 </div>
             </section>
 

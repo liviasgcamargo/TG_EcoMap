@@ -22,8 +22,9 @@ const Login = () => {
                 });
 
                 if (res.data.success) {
-                    // Se o login for bem-sucedido, redireciona para o perfil do usuário
+                    // Se o login for bem-sucedido, armazena os dados do usuário no localStorage
                     const usuario = res.data.usuario;
+                    localStorage.setItem('usuario', JSON.stringify(usuario));
                     navigate('/perfil', { state: { usuario } });
                 } else {
                     setError('Email ou senha incorretos.');

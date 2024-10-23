@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -149,7 +155,7 @@ header {
   text-decoration: underline;
 }
 
-footer {
+/* footer {
   background-color: #4CAF50;
   color: white;
   padding: 20px 0;
@@ -164,7 +170,7 @@ footer {
 
 .footer-links a:hover, .social-media a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Estilos do Pop-up */
 .popup {
@@ -302,6 +308,7 @@ footer {
 footer a {
   color: white;
   text-decoration: none;
+  margin-right: 40px;
 }
 
 footer a:hover {
@@ -946,3 +953,114 @@ input[disabled], textarea[disabled], select[disabled] {
   margin-top: -10px;
   margin-bottom: 15px;
 }
+
+/* Cards */
+.container-cards {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 39px;
+}
+
+.card {
+  background-color: #55703f;
+  color: #ffffff;
+  border-radius: 7px;
+  text-align: center;
+  width: 220px;
+  height: auto;
+  transition: 0.3s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 15px;
+}
+
+.card:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.tituloCard {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tituloCard a{
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #ffffffc5;
+}
+
+.textoCard {
+  font-size: 18px;
+  color: #ffffffc5;
+  margin-top: 10px;
+}
+/* Fim dos cards */
+
+.menu_itens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-right: 40px;
+}
+
+/* Navbar */
+.menu_navegacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-right: 40px;
+}
+
+.menu_navegacao a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 6px;
+}
+
+.menu_item {
+  color: #356037;
+  margin-right: 40px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.logoHeader {
+  margin-left: 70px;
+}
+
+#btnContact {
+  font-size: 14px;
+  width: 129px;
+  height: 32.53px;
+  color: #ffffff;
+  background-color: #356037;
+  border-radius: 8px;
+  border-style: none;
+  font-weight: medium;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  line-height: 32.53px;
+}
+
+#btnContact:hover {
+  background-color: #2a4f2d;
+}
+/* Fim da navbar */

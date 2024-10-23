@@ -35,7 +35,36 @@ const Login = () => {
         }
     };
 
+
+  const handleCadastrarClick = () => {
+      navigate('/cadastrar'); // Redireciona para a página de cadastro
+  };
+
+  const handleLoginClick = () => {
+      navigate('/login'); // Redireciona para a página de login
+  };
     return (
+        <div>
+            <header>
+                <div className="container">
+                    <div className="logo">
+                        <h1>EcoMap</h1>
+                    </div>
+                    <div>
+                        
+                    </div>
+                    <div class="menu_itens">
+                        <a class="menu_item" href="/home">Home</a>
+                        <a class="menu_item" href="/info">Guia de Reciclagem</a>
+                        <a class="menu_item" href="/info">Perguntas Frequentes</a>
+                        <a class="menu_item" href="/info">Sobre nós</a>
+                    </div>
+                    <div className="nav-buttons">
+                        <button className="btn" onClick={handleCadastrarClick}>Cadastrar</button>
+                        <button className="btn" onClick={handleLoginClick}>Entrar</button>
+                    </div>
+                </div>
+            </header>
         <div className="login-container">
             <h1>ENTRAR</h1>
             <form onSubmit={handleLogin}>
@@ -58,6 +87,19 @@ const Login = () => {
                 <p>Não tem uma conta? <a href="/cadastrar">Cadastre-se</a></p>
                 <button type="submit" className="btn-primary">ENTRAR</button>
             </form>
+        </div>
+        <footer>
+                <p>&copy; 2024 EcoMap</p>
+                <div className="footer-links">
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Entre em contato</a>
+                </div>
+                <div className="social-media">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </footer>
         </div>
     );
 };

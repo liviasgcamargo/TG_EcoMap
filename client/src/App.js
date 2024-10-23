@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Perfil from './pages/Perfil';
 import SugestaoPonto from './pages/SugestaoPonto';
 import Admin from './pages/Admin';
+import Informacao from './pages/Informacao';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/sugerirPonto" element={<SugestaoPonto />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/info" element={<Informacao />} />
       </Routes>
       </BrowserRouter>
     </div>

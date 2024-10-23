@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'; // Hook para navegação
 import axios from "axios";
 
 const Cadastro = () => {
@@ -54,8 +55,29 @@ const Cadastro = () => {
       alert("Erro ao cadastrar usuário");
     }
   };
+  const navigate = useNavigate(); // Hook para redirecionar o usuário
+
+  const handleCadastrarClick = () => {
+      navigate('/cadastrar'); // Redireciona para a página de cadastro
+  };
+
+  const handleLoginClick = () => {
+      navigate('/login'); // Redireciona para a página de login
+  };
 
   return (
+    <div>
+    <header>
+                <div className="container">
+                    <div className="logo">
+                        <h1>EcoMap</h1>
+                    </div>
+                    <div className="nav-buttons">
+                        <button className="btn" onClick={handleCadastrarClick}>Cadastrar</button>
+                        <button className="btn" onClick={handleLoginClick}>Entrar</button>
+                    </div>
+                </div>
+            </header>
     <div className="cadastro-container">
       <h1>CADASTRAR:</h1>
       <form onSubmit={handleSubmit}>
@@ -281,6 +303,19 @@ const Cadastro = () => {
 
         <button type="submit">Cadastrar</button>
       </form>
+    </div>
+    <footer>
+                <p>&copy; 2024 EcoMap</p>
+                <div className="footer-links">
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Entre em contato</a>
+                </div>
+                <div className="social-media">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </footer>
     </div>
   );
 };
